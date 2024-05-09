@@ -39,8 +39,3 @@ class ProductRetrieveUpdateDeleteView(RetrieveUpdateDestroyAPIView):
             return ProductSerializer
         return ProductUpdateSerializer
 
-    def delete(self, request, *args, **kwargs):
-        product_id = kwargs.get('product_id')
-        product = self.get_object()
-        product.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
